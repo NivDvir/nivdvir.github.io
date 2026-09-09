@@ -228,17 +228,17 @@ em {
 
 <figure>
   <img src="figures/Cover.png" alt="Painting of trees of different species sharing one glowing golden root network in open grassland, with birds carrying threads of script flying between the canopies under a partly clouded sky." loading="lazy">
-  <figcaption>Different species, the same marks. Separate trees, one soil, and the birds carrying what crosses between them.</figcaption>
+  <figcaption>Different species, the same marks. Separate trees, one soil, and the birds carrying what crosses between them.</figcaption>
 </figure>
 
 <p>Once several Claude Code projects (CC-projects from here on) with real capability share one machine, the expensive failures are not deleted files. They are an agent confidently answering a question that was never its to answer, a stale copy of someone else’s state quoted back as a fact, and an action that slips through because the permission model guards paths and has no concept of subject matter. One of my CC-projects ran <code>gh pr list</code> against a repository squarely owned by a different CC-project of mine, and nothing stopped it: the directory was blocked, the API call was not, and the same information walked in through the second door. The boundary that matters is drawn around subjects, and no configuration draws it, so it has to be held by rules the agents follow. That makes the rule set the engineered artifact, something you design, test, and find bugs in. What follows is that rule set: six laws, the edges they run on, and the path a single request takes from one project to another and back.</p>
 
 <figure>
   <img src="figures/Main.png" alt="Diagram of project A probing project B: a red blocked line trying to read B’s directory, which sits inside a solid guarded boundary, next to two green successful paths reaching B’s GitHub repo and public status inside a larger dashed boundary the permission system cannot see." loading="lazy">
-  <figcaption>The permission system can see the solid line. The domain is the dashed one.</figcaption>
+  <figcaption>The permission system can see the solid line. The domain is the dashed one.</figcaption>
 </figure>
 
-<h2>The shape: a forest of projects</h2>
+<h2>The shape: a forest of projects</h2>
 
 <p>The unit here is the CC-project, not the agent. Multi-agent hierarchy is solved territory: an orchestrator spawns sub-agents, which spawn workers, all inside one project, one context, one owner. Nothing here competes with that. What has no shape by default is communication between CC-projects, each sovereign, each a hierarchy inside, none ranked against another outside. A tree in a forest is not higher than the tree beside it. Hierarchy exists only inside each trunk. Between trunks there is law.</p>
 
@@ -252,10 +252,10 @@ em {
 
 <figure>
   <img src="figures/Structure.png" alt="Diagram of three CC-project folders side by side. Inside the first, black arrows run down from its head to a sub-project and back up, labelled commands and answers to. Between the separate folders, teal arrows are labelled asks, cannot command. A dashed box below holds the dispatcher." loading="lazy">
-  <figcaption>Two kinds of edge, and only two: commands down inside a trunk, asks across between them.</figcaption>
+  <figcaption>Two kinds of edge, and only two: commands down inside a trunk, asks across between them.</figcaption>
 </figure>
 
-<h2>The six laws</h2>
+<h2>The six laws</h2>
 
 <p>Each law covers one dimension and only one, so any of them can be read, applied, or amended without disturbing the other five, though only the person these projects serve may amend any of them. Together they run as one mechanism, and the walk-through after them shows it running: the registry of the first law tells you whose a subject is, the second stamps what comes back with what kind of thing it is, the third carries the request and the answer, the fourth says what the request may not carry, the fifth gates what it may cause, and the sixth keeps two such paths honest with each other.</p>
 
@@ -292,7 +292,7 @@ em {
 
 <figure>
   <img src="figures/Records.png" alt="Two-panel diagram. Left, headed What it looks like: head A’s record says the project lives at tilde slash old-name, head B’s says new-name, with a red band between them reading contradiction, one of them must be wrong. Right, headed What it is: the same two lines tagged SNAPSHOT and FACT, with a green band reading no contradiction." loading="lazy">
-  <figcaption>Name the kind and the contradiction dissolves: one is a snapshot, the other the owner’s live fact.</figcaption>
+  <figcaption>Name the kind and the contradiction dissolves: one is a snapshot, the other the owner’s live fact.</figcaption>
 </figure>
 
 <p>The operational form is worth adopting on its own. Hold a pointer, not a copy. For any fact another head owns that can change, store the address and ask when you need it. Going stale is the small problem; being quoted back at its owner as their own record is the large one. When you must copy, stamp it with date and source and let it expire with the task.</p>
@@ -351,7 +351,7 @@ em {
 
 <p>Detecting a convergence is the hard part, since two projects with different subjects, owners and vocabularies have no natural moment at which either notices. It is the law exercised least, and the one most likely to be discovered late.</p>
 
-<h2>One request, end to end</h2>
+<h2>One request, end to end</h2>
 
 <p>Project A needs a fact that project B owns.</p>
 
@@ -361,7 +361,7 @@ em {
 
 <p>Finally the variant where A and B contradict each other. Check the kinds first, because most of these are a snapshot or a positioning choice being read as a fact, and they dissolve without a ruling. If the contradiction survives that check, or the dispute is about which kind a record is, neither side resolves it: A tells B, both readings are recorded openly with their authors, neither side acts, and the question goes to the dispatcher, where holding it open is the correct state until it is ruled, unless the question is about the person these projects serve, whose identity, history and intent only they answer.</p>
 
-<h2>What it costs, and what it does not do yet</h2>
+<h2>What it costs, and what it does not do yet</h2>
 
 <p>This is a set of files and behaviours, not an enforcement layer. Nothing in it intercepts a call, so the honest claim is narrow: only behaviour enforces this, and the files exist to make correct behaviour cheap to look up. Renumbering a live standard also has a price, because every note that cites a bare number then cites nothing, so write the concordance mapping old numbers onto laws before you delete the old numbering.</p>
 
@@ -375,7 +375,7 @@ em {
 
 <p>What broke in the tooling is a separate field-notes piece, because a protocol write-up with no failures in it is a design document in field-report clothing.</p>
 
-<h2>Test your rules like code</h2>
+<h2>Test your rules like code</h2>
 
 <p>Rules a system runs on are code, and “it reads better now” is not a test. You wrote the sentences, which makes you the worst judge of whether a stranger can follow them. Run three checks, each catching what the others miss.</p>
 
@@ -387,7 +387,7 @@ em {
 
 <p>One caution about the bar. The completeness criterion is not that every situation has a precomputed answer, which no rule set achieves. It is that no situation lacks a lawful next move: following the rules always produces something you may do, even when that is to hold the question open, tell the other side you are holding it, and act on neither reading until someone rules. Holding a question open is a lawful move. Quietly resolving it is the defect.</p>
 
-<h2>Where the ideas come from</h2>
+<h2>Where the ideas come from</h2>
 
 <p>Almost every piece of this has a published name already.</p>
 
@@ -421,7 +421,7 @@ em {
 
 <p>The literature for this is not in the agent-protocol space: it is in domain-driven design, in <em>Team Topologies</em>, in Koestler on self-regulating hierarchic order, and in a 1988 note about a compiler tricked into writing to a file it should not have touched, so read those before you write your eleventh clause.</p>
 
-<h2>Reading, most useful first</h2>
+<h2>Reading, most useful first</h2>
 
 <ul>
   <li><strong>Team Topologies</strong> (Skelton and Pais, 2019). Settles the platform-team role better than anything else, and is the only source built for this problem shape rather than adapted to it.</li>
