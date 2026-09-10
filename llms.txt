@@ -1,14 +1,14 @@
-# Inter Claude Code Project Communication
+# A Garbage-Collector Layer Between Claude Code Projects
 
-> When several Claude Code projects share one machine, the failures are confident wrong answers and stale state. Six laws that draw the boundary around subjects.
+> A Claude Code project works from a picture of your code that quietly stops being true. Six rules keep the managing files honest with the content they manage, and the owner of each project does the collecting.
 
-By Niv Dvir. Published 2026-09-08, last revised 2026-09-09. About 4,047 words.
+By Niv Dvir. Published 2026-09-08, last revised 2026-09-11. About 3,709 words.
 
 The six laws quoted in this article are reproduced verbatim from the constitution the projects actually run on, not paraphrased.
 
 ## The article
 
-- [Inter Claude Code Project Communication](https://nivdvir.github.io/): Six laws for running several Claude Code projects on one machine without them answering for each other.
+- [A Garbage-Collector Layer Between Claude Code Projects](https://nivdvir.github.io/): If you want your projects to work together, someone has to keep their records honest. No runtime does it. Six rules, and the owner of each project does the collecting..
 - [Full text as plain markdown](https://nivdvir.github.io/llms-full.txt): the same article without site chrome.
 
 ## What it covers

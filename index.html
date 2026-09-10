@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inter Claude Code Project Communication</title>
-<meta name="description" content="When several Claude Code projects share one machine, the failures are confident wrong answers and stale state. Six laws that draw the boundary around subjects.">
+<title>A Garbage-Collector Layer Between Claude Code Projects</title>
+<meta name="description" content="A Claude Code project works from a picture of your code that quietly stops being true. Six rules keep the managing files honest with the content they manage, and the owner of each project does the collecting.">
 <link rel="canonical" href="https://nivdvir.github.io/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="Niv Dvir">
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Inter Claude Code Project Communication">
-<meta property="og:description" content="When several Claude Code projects share one machine, the failures are confident wrong answers and stale state. Six laws that draw the boundary around subjects.">
+<meta property="og:title" content="A Garbage-Collector Layer Between Claude Code Projects">
+<meta property="og:description" content="A Claude Code project works from a picture of your code that quietly stops being true. Six rules keep the managing files honest with the content they manage, and the owner of each project does the collecting.">
 <meta property="og:url" content="https://nivdvir.github.io/">
 <meta property="og:image" content="https://nivdvir.github.io/figures/Cover.png">
 <meta property="og:image:width" content="1600">
@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Niv Dvir">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-09-08">
-<meta property="article:modified_time" content="2026-09-09">
+<meta property="article:modified_time" content="2026-09-11">
 <meta property="article:author" content="https://github.com/NivDvir">
 <meta property="article:tag" content="Claude Code">
 <meta property="article:tag" content="AI agents">
@@ -31,17 +31,17 @@
 <meta property="article:tag" content="confused deputy">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Inter Claude Code Project Communication">
-<meta name="twitter:description" content="When several Claude Code projects share one machine, the failures are confident wrong answers and stale state. Six laws that draw the boundary around subjects.">
+<meta name="twitter:title" content="A Garbage-Collector Layer Between Claude Code Projects">
+<meta name="twitter:description" content="A Claude Code project works from a picture of your code that quietly stops being true. Six rules keep the managing files honest with the content they manage, and the owner of each project does the collecting.">
 <meta name="twitter:image" content="https://nivdvir.github.io/figures/Cover.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Inter Claude Code Project Communication",
-  "alternativeHeadline": "Six laws for running several Claude Code projects on one machine without them answering for each other",
-  "description": "When several Claude Code projects share one machine, the failures are confident wrong answers and stale state. Six laws that draw the boundary around subjects.",
+  "headline": "A Garbage-Collector Layer Between Claude Code Projects",
+  "alternativeHeadline": "If you want your projects to work together, someone has to keep their records honest. No runtime does it. Six rules, and the owner of each project does the collecting.",
+  "description": "A Claude Code project works from a picture of your code that quietly stops being true. Six rules keep the managing files honest with the content they manage, and the owner of each project does the collecting.",
   "image": {
     "@type": "ImageObject",
     "url": "https://nivdvir.github.io/figures/Cover.png",
@@ -67,7 +67,7 @@
     ]
   },
   "datePublished": "2026-09-08",
-  "dateModified": "2026-09-09",
+  "dateModified": "2026-09-11",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://nivdvir.github.io/"
@@ -75,7 +75,7 @@
   "url": "https://nivdvir.github.io/",
   "inLanguage": "en",
   "isAccessibleForFree": true,
-  "wordCount": 4047,
+  "wordCount": 3709,
   "keywords": "Claude Code, AI agents, multi-agent systems, inter-project protocol, agent governance, bounded context, confused deputy",
   "articleSection": [
     "The shape: a forest of projects",
@@ -338,7 +338,7 @@ em {
 <body>
 <div class="page">
 <header class="masthead">
-<h1>Inter Claude Code Project Communication</h1>
+<h1>A Garbage-Collector Layer Between Claude Code Projects</h1>
 <p class="byline">Niv Dvir<span class="sep">&middot;</span>8 September 2026</p>
 </header>
 
@@ -347,33 +347,43 @@ em {
   <figcaption>Different species, the same marks. Separate trees, one soil, and the birds carrying what crosses between them.</figcaption>
 </figure>
 
-<p>Once several Claude Code projects (CC-projects from here on) with real capability share one machine, the expensive failures are not deleted files. They are an agent confidently answering a question that was never its to answer, a stale copy of someone else’s state quoted back as a fact, and an action that slips through because the permission model guards paths and has no concept of subject matter. One of my CC-projects ran <code>gh pr list</code> against a repository squarely owned by a different CC-project of mine, and nothing stopped it: the directory was blocked, the API call was not, and the same information walked in through the second door. The boundary that matters is drawn around subjects, and no configuration draws it, so it has to be held by rules the agents follow. That makes the rule set the engineered artifact, something you design, test, and find bugs in. Change something another project owns and you leave work you cannot see. Asking its owner puts the only one who can spot it in the loop while you are still there, not after it has cost you a week. What follows is that rule set: six laws, the edges they run on, and the path a single request takes from one project to another and back.</p>
+<p>A request you have made a dozen times, one that used to run at once, now sits and thinks. Tokens burn before a file changes. The forums blame the model, and often they are right. One of the reasons is quieter: the project is working from a picture of your code that stopped being true.</p>
+
+<p>A Claude Code project keeps a managing layer above its content: instruction files, notes, who owns what. You write that layer once. The content moves every day, and nothing tells the layer. A missing file fails loudly. A stale one fails in silence. The project acts on an old map, learns of changes late, and cannot measure how far it has drifted. That drift is the garbage, and nothing collects it.</p>
+
+<p>It cannot collect its own. A stale picture cannot know it is stale. Only the owner of the live state can. Change something another project owns and you leave work you cannot see. Asking its owner puts the only one who can spot it in the loop while you are still there, not after it has cost you a week.</p>
+
+<p>A boss does not fix it, because the worlds differ. One project builds a product, one writes about it, one runs the outreach. The product project knows nothing about publishing. The article project cannot tell which version shipped this morning. Put either in charge and it rules on what it does not understand. Each needs the opposite: what its peers know, taken whole, to be the best in its own field.</p>
+
+<p>That is what a working collector gives you, and the collector is a rule. No project acts on another's content because it looked right from outside. It asks the owner, who holds what the files do not say, names the work the change drags with it, and knows when someone touched it. Work happens by consent.</p>
+
+<p>No runtime does this. The six laws that follow are the collector, and the owner of each project does the collecting.</p>
+
+<h2>The shape: a forest of projects</h2>
+
+<p>The unit here is the Claude Code project (CC-project from here on). An agent is one worker inside it. Inside a project, orchestrators already handle hierarchy: one spawns workers, all under one owner. Between projects there is no default. A tree in a forest is not higher than the tree beside it. Hierarchy exists only inside each trunk. Between trunks there is law.</p>
+
+<p>A directory is a CC-project if and only if it carries its own <code>CLAUDE.md</code>. That file gives it a head, the one owner that answers for everything under it. Everything else is content of the nearest CC-project above. A subproject passes the same test and is a whole unit, the way a subsidiary is a whole company.</p>
+
+<p>Two kinds of edge exist. Inside a trunk, head to sub-head: commands down, answers owed up. Between trunks, head to head: asks across, with no power to command.</p>
+
+<p>Containment shows ownership but does not prove it. A file can sit in one tree and belong to another's domain. A scheduled job belongs to the domain it serves. Where the layout and the record disagree, the record decides. A contested entry stays contested until the dispatcher or the human rules, and a project that settles its own contested entry has ruled in its own favour.</p>
 
 <figure>
   <img src="figures/Main.png" alt="Diagram of project A probing project B: a red blocked line trying to read B’s directory, which sits inside a solid guarded boundary, next to two green successful paths reaching B’s GitHub repo and public status inside a larger dashed boundary the permission system cannot see." loading="lazy">
   <figcaption>The permission system can see the solid line. The domain is the dashed one.</figcaption>
 </figure>
 
-<h2>The shape: a forest of projects</h2>
-
-<p>The unit here is the CC-project, not the agent. Multi-agent hierarchy is solved territory: an orchestrator spawns sub-agents, which spawn workers, all inside one project, one context, one owner. Nothing here competes with that. What has no shape by default is communication between CC-projects, each sovereign, each a hierarchy inside, none ranked against another outside. A tree in a forest is not higher than the tree beside it. Hierarchy exists only inside each trunk. Between trunks there is law.</p>
-
-<p>Membership is a concrete test. A directory is a CC-project exactly when it carries its own <code>CLAUDE.md</code>, the charter that gives it a head: the one owner that answers for everything under it. Everything else is content of the nearest CC-project above it. Inside, it may hold subprojects, each a full unit by the same test with a head of its own, plus content the head owns directly. A subsidiary is a whole company, not a department, and the test chains down.</p>
-
-<p>That yields two kinds of edge and only two. Inside a trunk, head to sub-head: commands down, answers owed up. Between trunks, head to head: asks across, and no power to command.</p>
-
-<p>Containment is how ownership becomes visible, and it is evidence, never proof: a file can sit inside one tree and belong to another’s domain, and a scheduled job belongs to the domain it serves, not the directory holding it. Where the layout and the record disagree, the record decides. Where the record is marked contested, it stays contested until the dispatcher or the human rules, because a project that quietly settles its own contested entry has decided a dispute in its own favour.</p>
-
-<p>One entity sits above the trees. A dispatcher owns the working method and no content domain, serving every project and commanding none of them, though it stands higher than the trees that depend on it and does insist on correct conduct. What terminates there are the gaps that surface between projects: a contradiction between owners that will not dissolve, an owner nobody can reach, a remit nobody has recorded. What does not terminate there is a ruling inside a tree, which belongs to that tree, or anything a head should be asking a peer directly. If you run three CC-projects you hold that role yourself, and its questions land on your desk beside the ones that were always yours.</p>
+<p>One entity sits above the trees. The dispatcher owns the working method and no content, serves every project, commands none, and insists on correct conduct. Gaps between projects end there: a contradiction that will not dissolve, an owner nobody can reach, a remit nobody recorded. A ruling inside a tree does not. With three CC-projects you hold that role yourself.</p>
 
 <figure>
-  <img src="figures/Structure.png" alt="Diagram of three CC-project folders side by side. Inside the first, black arrows run down from its head to a sub-project and back up, labelled commands and answers to. Between the separate folders, teal arrows are labelled asks, cannot command. A dashed box below holds the dispatcher." loading="lazy">
+  <img src="figures/Structure.png" alt="Diagram of three CC-project folders side by side. Inside the first, black arrows run down from its head to a sub-project and back up, with the labels commands and answers to. Between the separate folders, teal arrows carry the label asks, cannot command. A dashed box below holds the dispatcher." loading="lazy">
   <figcaption>Two kinds of edge, and only two: commands down inside a trunk, asks across between them.</figcaption>
 </figure>
 
 <h2>The six laws</h2>
 
-<p>Each law covers one dimension and only one, so any of them can be read, applied, or amended without disturbing the other five, though only the person these projects serve may amend any of them. Together they run as one mechanism, and the walk-through after them shows it running: the registry of the first law tells you whose a subject is, the second stamps what comes back with what kind of thing it is, the third carries the request and the answer, the fourth says what the request may not carry, the fifth gates what it may cause, and the sixth keeps two such paths honest with each other.</p>
+<p>Each law covers one dimension, so you can read or apply any of them alone. Only the person these projects serve may amend one. Together they are the collector: the first tells you whose a subject is, the second stamps what comes back with its kind, the third carries the request and the answer, the fourth says what a request may not carry, the fifth gates what it may cause, and the sixth keeps two paths honest with each other. The walk-through after them shows it running.</p>
 
 <h3>1. Ownership</h3>
 
@@ -382,20 +392,16 @@ em {
   Ownership is three inseparable things: the authority to rule on the domain, the responsibility for its records, and the capability to refresh them. Capability exercised through a human’s gated hands (a login, a credential, a click they must perform) still counts; it is mediated, not missing. If a leg is genuinely missing, the ownership itself is broken: fix that, never the symptom. Tree containment is evidence of ownership, never proof: an ownership recorded as contested in the registry stands contested until the dispatcher or the human rules, whatever tree holds the files. OS-level artifacts (a LaunchAgent, a cron entry) belong to the domain they serve, not the directory that contains them. The shared configuration directory is neutral ground, stewarded by the dispatcher. The registry is ownership’s map: read it before any cross-project work; keep your own row true; never write another’s; two heads whose subjects touch must recognize each other in both directions. (Standing rulings, 2026-08: the subject of a piece, never the platform, decides its ownership; every head carries its own publication capability, and no head manages publication for others.) Nobody else touches, verifies, or rules on a domain. They ask.</p>
 </blockquote>
 
-<p>An owner who cannot refresh a class of fact says so and stops, because a caveat is not a substitute for an answer.</p>
-
-<p>The mechanism is a shared registry, the object FIPA calls a Directory Facilitator and itself describes as a yellow pages service.</p>
+<p>The mechanism is a shared registry, the thing FIPA calls a Directory Facilitator and describes as a yellow pages service.</p>
 
 <ul>
   <li>Read it before any cross-project work.</li>
   <li>Keep your own row true.</li>
-  <li>Never write another head’s row.</li>
+  <li>Never write another head's row.</li>
   <li>Two heads whose subjects touch must recognise each other in both directions.</li>
 </ul>
 
-<p>Entries carry the mark of who wrote them: an entry written by the head it describes is authoritative, and an entry written about a head by anyone else is usable but not authoritative.</p>
-
-<p>The failure this removes is the confident wrong answer. Nobody touches, verifies, or rules on a domain that is not theirs. They ask.</p>
+<p>Who wrote an entry matters. One written by the head it describes is authoritative. You may use anyone else's entry about a head, and it carries no authority. An owner who cannot refresh a class of fact says so and stops. A caveat does not stand in for an answer. What this removes is the confident wrong answer.</p>
 
 <h3>2. Records</h3>
 
@@ -404,16 +410,16 @@ em {
   a fact, true about the world, refreshable from a source; a positioning choice, a deliberate presentation (a CV emphasis, an outbound stance), which may differ from fact without contradiction, set and recorded by whoever owns the presentation, the human’s own presentation only by the human, and never invented by a head; a ruling, a decision by the human or an owner, which exists only once written into the file that governs the behaviour it changes, dated and sourced; a snapshot, a dated copy taken for one task, expiring with the task, never authority, and a snapshot of another head’s live state is taken with that owner’s knowledge, stamped with source, and discarded when the task ends; a draft, what was true when written, an archive, never a queue. A record’s kind is fixed when it is written; reclassifying your own record under challenge is resolving the dispute in your own favour: the defect, not a defence. Authority has exactly one home per kind: conduct here, ownership in the registry, procedure in the mechanics file, each domain’s rules in its owner’s governing files. Everything else anywhere, memories, boxes, histories, seeded context, is a pointer or a snapshot. A fix that has not landed in its single home has not happened. When two records disagree, check their kinds first: most contradictions are a positioning choice read as a fact, and dissolve. A genuine contradiction between owners, including a dispute about a record’s kind, is handled one way: tell the peer first, record both readings openly, neither side acts on either, until it is ruled. The dispatcher rules, except where the question is about the person all these projects serve, whose identity, history, or intent only they answer. Holding it open is correct behaviour; quietly resolving it is the defect.</p>
 </blockquote>
 
-<p>Most apparent contradictions between agents dissolve the moment you check the kinds. One project renamed its own directory, a fact only its owner could change, and other projects’ records went on asserting the old path: a script resolved to nothing, and a permission entry silently stopped matching, surfacing as unexplained prompts nobody could trace. For days two projects’ records flatly contradicted each other about where a third one lived, and neither was wrong when it was written. The stale entries were snapshots being read as facts, and classifying them evaporates the contradiction: the owner’s live state is the fact, and every copy elsewhere expired the day the owner moved.</p>
+<p>Hold a pointer, not a copy. For any fact another head owns and can change, store the address and ask when you need it. When you must copy, stamp it with date and source and let it expire with the task.</p>
+
+<p>Going stale is the small problem. The large one is the owner hearing their own record quoted back at them. And a ruling agreed in conversation has not happened, because the next session reads the governing file and not the conversation.</p>
+
+<p>The figure shows the shape of it: two projects disagreed about where a third one lived, both held snapshots, and naming the kinds settled it. What the laws do not yet do is notify. Nothing told those projects the path had moved, and a rule that dissolves the contradiction after the fact leaves room for one that announces the change before it.</p>
 
 <figure>
-  <img src="figures/Records.png" alt="Two-panel diagram. Left, headed What it looks like: head A’s record says the project lives at tilde slash old-name, head B’s says new-name, with a red band between them reading contradiction, one of them must be wrong. Right, headed What it is: the same two lines tagged SNAPSHOT and FACT, with a green band reading no contradiction." loading="lazy">
-  <figcaption>Name the kind and the contradiction dissolves: one is a snapshot, the other the owner’s live fact.</figcaption>
+  <img src="figures/Records.png" alt="Two-panel diagram. Left, headed What it looks like: head A&#x27;s record says the project lives at tilde slash old-name, head B&#x27;s says new-name, with a red band between them reading contradiction, one of them must be wrong. Right, headed What it is: the same two lines tagged SNAPSHOT and FACT, with a green band reading no contradiction." loading="lazy">
+  <figcaption>One is a snapshot, the other the owner's live fact.</figcaption>
 </figure>
-
-<p>The operational form is worth adopting on its own. Hold a pointer, not a copy. For any fact another head owns that can change, store the address and ask when you need it. Going stale is the small problem; being quoted back at its owner as their own record is the large one. When you must copy, stamp it with date and source and let it expire with the task.</p>
-
-<p>Two consequences carry weight. A ruling agreed in conversation, or written into a report, has not been made: <strong>a fix that has not landed in its single home has not happened</strong>, because the next session reads the governing file and not the conversation. If someone challenges a record of yours and you reclassify it as a different kind, you have resolved the dispute in your own favour, and that move is the defect, not a defence. For a genuine contradiction between owners, including a dispute about a record’s kind, there is one procedure: tell the peer first, record both readings openly, and let neither side act until it is ruled.</p>
 
 <h3>3. Communication</h3>
 
@@ -422,14 +428,14 @@ em {
   Enter at the head; the request descends one level at a time, and every node on the path is a participant, free to amend, answer, or refuse, never a relay. The answer returns up the same path, hop by hop. Name the subject, never another tree’s internals. One session per coherent request, and the test is: would the answer to one change the answer to the other? Yes, one session; no, separate sessions. A request is one of three kinds, named explicitly: a ruling (is this true, is this yours), evidence (give me your material, and the holder decides what leaves its scope), or capability (operate your tool for me, tiered by what the tool does, never by who asks). Asking is how facts cross boundaries. Never verify another’s domain yourself, and never impose a constraint that forbids an owner from refreshing its own facts. Constraints bind scope, not tools. An owner who cannot refresh a fact class says so and stops; a caveat is not a substitute for an answer. An owner who cannot be reached at all is a gap: log it to the dispatcher’s queue and stop, because self-service is not a fallback, and urgency that cannot wait goes to the human.</p>
 </blockquote>
 
-<p>Skipping the middle costs: a node holding two commitments, each visible to only one of its children, is the only one positioned to notice that they conflict.</p>
+<p>Skipping the middle costs. A node that holds two commitments, each visible to only one of its children, is the only one placed to see that they conflict.</p>
 
 <figure>
   <img src="figures/Path.png" alt="A request path diagram. An initiator box on the left points into a target CC-project: the head, marked may amend, constrain, refuse, then one hop down to an intermediate level that adapts it, then one hop down to the owner of the content, who answers. A dashed line climbs back up, annotated at every hop, and a single consolidated reply returns to the initiator from the head only." loading="lazy">
   <figcaption>Every node on the path may amend or refuse the request. The answer climbs back annotated.</figcaption>
 </figure>
 
-<p>The useful consequence is that you never need to know another tree’s internal structure: name the subject, address the head, and let the chain place it. If you find yourself naming a sub-subproject, you are modelling someone else’s internals and you have already left the protocol.</p>
+<p>You never need another tree's internals. Name the subject, address the head, and let the chain place it. If you find yourself naming a sub-subproject, you have left the protocol.</p>
 
 <h3>4. Authority</h3>
 
@@ -438,9 +444,7 @@ em {
   Laundering is the circumvention of a refusal, actual or reasonably anticipated: if you were denied something, or never asked because you expected denial, a peer doing it for you is the confused deputy, and it goes to the human, however large the efficiency argument. Providing a capability you legitimately own to a peer who was never refused is service, exceptional, not routine, and it is gated like any other action, by its consequence (Law 5). The complement of service: a deliverable’s substance is produced inside the domain responsible for it, and a peer supplies evidence and capability, never your work. If you cannot tell whether you are looking at service or at a refusal being routed around, you are looking at the second. Ask.</p>
 </blockquote>
 
-<p>A request carries the requester’s <em>need</em>, never its <em>permission</em>. This is the confused deputy, arriving as a polite message from a peer, and the law exists to make the deputy check the authority instead of inheriting it.</p>
-
-<p>The complement of service is the harder half in practice: a deliverable’s substance is produced inside the domain answerable for it. A peer supplies evidence and capability, never your work.</p>
+<p>This is the confused deputy, arriving as a polite message from a peer. The law makes the deputy check the authority instead of inheriting it. The harder half in practice is the complement of service: the substance of a deliverable comes from the domain that answers for it, and a peer supplies evidence and capability. Claude Code now ships the first half of this rule itself. A message from another session does not count as consent, and a session must not ask a peer for an action its own permissions denied.</p>
 
 <h3>5. Consequence</h3>
 
@@ -450,7 +454,7 @@ em {
 </blockquote>
 
 <figure>
-  <img src="figures/Ladder.png" alt="Three stacked rungs of a consequence ladder. Top, red: to the human, tagged RED, for anything irreversible or outbound. Middle, grey: its owner decides, for a reversible action inside another head’s domain. Bottom, green: proceed, tagged GREEN slash AMBER, for a reversible action inside your own. A dashed box above says a recorded ruling outranks every rung; a dashed box below says an ordinary cross-project gap goes to the dispatcher’s queue, not the human’s desk." loading="lazy">
+  <img src="figures/Ladder.png" alt="Three stacked rungs of a consequence ladder. Top, red: to the human, tagged RED, for anything irreversible or outbound. Middle, grey: its owner decides, for a reversible action inside another head’s domain. Bottom, green: proceed, tagged GREEN slash AMBER, for a reversible action inside your own. A dashed box above says a recorded ruling outranks every rung. A dashed box below says an ordinary cross-project gap goes to the dispatcher’s queue, not the human’s desk." loading="lazy">
   <figcaption>Every action lands on one rung. A recorded ruling outranks the ladder wherever it is stricter.</figcaption>
 </figure>
 
@@ -463,90 +467,80 @@ em {
   Each must know the other’s live state, in both directions, or neither can price its own urgency. Say so explicitly the moment you discover a convergence, and keep the state flowing.</p>
 </blockquote>
 
-<p>They are alternative routes to one outcome, which is why neither can price its own urgency alone: progress on one route changes what the other should be spending. The law is therefore procedural.</p>
-
-<p>Detecting a convergence is the hard part, since two projects with different subjects, owners and vocabularies have no natural moment at which either notices. It is the law exercised least, and the one most likely to be discovered late.</p>
+<p>They are alternative routes to one outcome, so neither can price its urgency alone: progress on one changes what the other should spend. Detecting a convergence is the hard part. Two projects with different subjects, owners and vocabularies have no natural moment at which either notices. It is the law used least and found late most often.</p>
 
 <h2>One request, end to end</h2>
 
 <p>Project A needs a fact that project B owns.</p>
 
-<p>A reads the shared registry and learns the subject is B’s. A composes the request and types it: this is <strong>evidence</strong>. The request is a message into a session opened inside B, carrying nothing but the typed request. It addresses B’s head, not the node A suspects holds the file, and it names the subject in A’s own terms without referring to anything inside B. B’s head reads the subject, decides the request is B’s to answer, and places it one hop down to the node whose remit covers it. That node either answers or passes it down again, until the request reaches the owner of the content, who decides what leaves its scope and answers with that alone. On the way back up, the intermediate node adds the thing only it can see, that the answer is bounded by a commitment its sibling made last week. B’s head consolidates and replies once. A records the reply as a <strong>snapshot</strong>, stamped with source and date, holds the pointer to B rather than the copy, and asks again the next time it needs the fact fresh.</p>
+<p>A reads the registry, learns the subject is B's, and sends an evidence request into a session inside B. It addresses B's head, not the node A suspects holds the file, and names the subject in A's own terms. B's head decides the request is B's and places it one hop down. Each node answers or passes it on, until the owner of the content decides what leaves its scope. On the way back up, the middle node adds the one thing only it can see: a commitment its sibling made last week bounds the answer. B's head consolidates and replies once. A records the reply as a snapshot with source and date, keeps the pointer to B, and asks again next time.</p>
 
-<p>Now the variant where A wants B to <em>do</em> something. A sends a <strong>capability</strong> request naming the tool’s effect, not B’s internals, and B applies the gates. Reversible and inside B’s domain: B’s owner decides, and A gets an answer either way. Irreversible, outbound, or touching money, credentials or deletion: it stops at B and goes to the human, and A’s urgency does not change that. What A may never do is take a refusal from B and send the same action to project C because C has the same tool and no history of saying no. That is the circumvention of a refusal, and A’s move is to record the refusal in its own records, stop, and take it to the human, however large the efficiency argument.</p>
+<p>When A wants B to do something, it sends a capability request naming the tool's effect, and B applies the gates. What A may not do is take a refusal from B and send the same action to project C because C has the same tool and no history of saying no. A records the refusal, stops, and takes it to the human.</p>
 
-<p>Finally the variant where A and B contradict each other. Check the kinds first, because most of these are a snapshot or a positioning choice being read as a fact, and they dissolve without a ruling. If the contradiction survives that check, or the dispute is about which kind a record is, neither side resolves it: A tells B, both readings are recorded openly with their authors, neither side acts, and the question goes to the dispatcher, where holding it open is the correct state until it is ruled, unless the question is about the person these projects serve, whose identity, history and intent only they answer.</p>
+<p>When A and B contradict each other, they check the kinds first, because most of these are a snapshot read as a fact and dissolve on sight. If the contradiction survives, neither side resolves it. A tells B, both readings go on record with their authors, neither acts, and the dispatcher rules. Holding it open is the correct state until then.</p>
 
 <h2>What it costs, and what it does not do yet</h2>
 
-<p>This is a set of files and behaviours, not an enforcement layer. Nothing in it intercepts a call, so the honest claim is narrow: only behaviour enforces this, and the files exist to make correct behaviour cheap to look up. Renumbering a live standard also has a price, because every note that cites a bare number then cites nothing, so write the concordance mapping old numbers onto laws before you delete the old numbering.</p>
+<p>This is a set of files and behaviours, and nothing in it intercepts a call. Only behaviour enforces it. The files exist to make correct behaviour cheap to look up. Renumbering a live standard has a price too: every note that cites a bare number then cites nothing, so write the concordance before you delete the old numbering.</p>
 
 <p>Three limits stand today.</p>
 
 <ul>
-  <li>The mechanics move questions and answers between heads reliably and have not yet carried a full cross-tree modification from request to landed change.</li>
-  <li>Convergence has been asserted between two lanes and not confirmed in both directions.</li>
-  <li>The laws are new, checked on paper and not yet by months of use.</li>
+  <li>The mechanics move questions and answers between heads and have not yet carried a full cross-tree modification from request to landed change.</li>
+  <li>One lane asserted convergence with another, and nobody has confirmed it from the other side.</li>
+  <li>The laws are new, checked on paper and not by months of use.</li>
 </ul>
 
-<p>What broke in the tooling is a separate field-notes piece, because a protocol write-up with no failures in it is a design document in field-report clothing.</p>
+<p>What broke in the tooling is a separate field-notes piece. A protocol write-up with no failures in it is a design document in field-report clothing.</p>
 
 <h2>Test your rules like code</h2>
 
-<p>Rules a system runs on are code, and “it reads better now” is not a test. You wrote the sentences, which makes you the worst judge of whether a stranger can follow them. Run three checks, each catching what the others miss.</p>
+<p>Rules a system runs on are code, and "it reads better now" is not a test. You wrote the sentences, so you are the worst judge of whether a stranger can follow them. Three checks catch what the others miss.</p>
 
-<p><strong>Blind adjudication.</strong> Take a dozen decisions your projects have already made and strip every trace of how they came out. Hand them, with the rule text and no history of your system, to two or three agents that have never seen it, and let each rule alone. Compare their verdicts with yours. A divergence is either a genuine disagreement about what the rule should say or a sentence that reads two ways, and you want both before the rules go live.</p>
+<p><strong>Blind adjudication.</strong> Take a dozen decisions your projects have already made and strip every trace of how they came out. Hand them, with the rule text and nothing else, to two or three agents that have never seen your system, and let each rule alone. A divergence from your verdict is either a real disagreement about what the rule should say or a sentence that reads two ways. You want both before the rules go live.</p>
 
-<p><strong>An inventory of undefined predicates.</strong> Make a pass that does nothing but list every term the rules lean on without defining, then attach an operational test to each or delete it. Gates fail quietly on undefined predicates, because everyone applying one is sure they know what the word means.</p>
+<p><strong>An inventory of undefined predicates.</strong> List every term the rules lean on without defining, then attach a test to each or delete it. Gates fail on undefined predicates, because everyone applying one is sure they know what the word means.</p>
 
-<p><strong>An adversarial read.</strong> Set an agent on the draft with no brief except to break it, and watch for a tidier definition that decides an open question while claiming only to reorganise. A clean-up pass produces that failure more often than any other.</p>
+<p><strong>An adversarial read.</strong> Set an agent on the draft with no brief except to break it, and watch for a tidier definition that decides an open question while claiming to reorganise. A clean-up pass produces that failure more than any other.</p>
 
-<p>One caution about the bar. The completeness criterion is not that every situation has a precomputed answer, which no rule set achieves. It is that no situation lacks a lawful next move: following the rules always produces something you may do, even when that is to hold the question open, tell the other side you are holding it, and act on neither reading until someone rules. Holding a question open is a lawful move. Quietly resolving it is the defect.</p>
+<p>The bar is not that every situation has a precomputed answer. It is that no situation lacks a lawful next move: following the rules always gives you something you may do, even when that is to hold the question open, tell the other side, and act on neither reading. Holding open is lawful. Resolving in private is the defect.</p>
 
 <h2>Where the ideas come from</h2>
 
 <p>Almost every piece of this has a published name already.</p>
 
-<p>A tree, one head plus everything under it, is a <strong>bounded context or a holon</strong>. Evans, Domain-Driven Design, 2003; Koestler.</p>
+<p>A tree, one head plus everything under it, is a bounded context in Evans and a holon in Koestler. The forest of independent trees interacting as peers is Koestler's holarchy, and distributed systems call it a federated architecture. The shared roster of who owns what is FIPA's Directory Facilitator, a yellow pages service, and Evans's context map. The dispatcher is a platform team in Skelton and Pais. Never modifying another tree's content, only asking, is Evans's anticorruption layer. A request that carries no authority of its own is Hardy's confused deputy.</p>
 
-<p>The forest of independent trees interacting as peers is a <strong>holarchy, or a federated architecture</strong>. Koestler; distributed systems usage.</p>
+<p>Koestler describes hierarchies whose branches interlock with other hierarchies to form horizontal networks, which is the forest, half a century early. Agent communication languages typed requests by act long before this, with KQML's <code>ask-if</code> and FIPA's <code>query-if</code> and <code>request</code>. Entering at the head is Evans's aggregate root. Gating by reversibility is Amazon's one-way and two-way doors.</p>
 
-<p>The shared roster of who owns what is a <strong>Directory Facilitator, a yellow pages service, and also a context map</strong>. FIPA Agent Management Specification; Evans.</p>
+<p>Two pieces are in no source I reached. The intermediate node as an active participant, free to amend a request in transit, where the closest specified behaviour requires a faithful relay. And marking a registry entry by who wrote it, so that anyone may use an entry written about a head, and it carries no authority, where FIPA's registry disclaims responsibility for what anyone registers and restricts nobody from registering anything.</p>
 
-<p>The dispatcher is a <strong>platform team</strong>. Skelton and Pais, Team Topologies, 2019.</p>
-
-<p>Never modifying another tree’s content, only asking and accepting, is an <strong>anticorruption layer</strong>. Evans.</p>
-
-<p>A request never carrying the requester’s authority is <strong>the confused deputy problem</strong>. Hardy, ACM SIGOPS, 1988.</p>
-
-<p>Koestler describes hierarchies as vertically arborizing structures whose branches interlock with other hierarchies to form horizontal networks, which is the forest, half a century early. Agent communication languages typed requests by act long before this, with KQML’s <code>ask-if</code> and FIPA’s <code>query-if</code> and <code>request</code>, entering at the head is Evans’ aggregate root, and gating by reversibility is Amazon’s one-way and two-way doors.</p>
-
-<p>Two pieces are in no source I reached: the intermediate node as an active participant, free to amend a request in transit instead of relaying it faithfully, where the closest specified behaviour requires the opposite; and marking a registry entry by who wrote it, so that an entry written about a head is usable but not authoritative, where FIPA’s registry disclaims responsibility for the accuracy of what is registered and restricts nobody from registering anything.</p>
+<p>Since this was written, part of it has shipped. Claude Code's cross-session messaging gives independent sessions a channel and a refusal switch, and its docs carry the fourth law: a message from another session does not count as consent, and a session must not ask a peer for an action its own permissions denied. The docs carry no notion of ownership, jurisdiction, or a request typed by what it asks for. Single-agent collectors exist too. Self-GC prunes a long-running agent's context, and context-diet audits persistent context for staleness. Each collects inside one agent. None collects between projects.</p>
 
 <h2>What transfers</h2>
 
 <p>If you run one agent, none of this applies. If you run several with real capability over shared resources, four things do.</p>
 
-<p><strong>Only behaviour enforces domain ownership.</strong> No configuration makes the mechanical guard and the ownership boundary coincide. Never mistake “it didn’t prompt me” for “it was mine to do.”</p>
+<p><strong>Only behaviour enforces ownership.</strong> No configuration makes the permission guard and the ownership boundary coincide. "It did not prompt me" is not "it was mine to do."</p>
 
-<p><strong>Ask, don’t verify.</strong> When another head owns a fact, ask for a per-claim verdict of confirmed, wrong, or not stated, and close with “what did I get backwards?”</p>
+<p><strong>Ask, don't verify.</strong> When another head owns a fact, ask for a per-claim verdict of confirmed, wrong, or not stated, and close with "what did I get backwards?"</p>
 
-<p><strong>Hold a pointer, not a copy.</strong> Store the address of anything that can change, and stamp any copy you do take with its date and its source.</p>
+<p><strong>Hold a pointer, not a copy.</strong> Store the address of anything that can change, and stamp any copy you take with its date and source.</p>
 
-<p><strong>Test your rules the way you’d test code.</strong> Blind adjudication is an afternoon, and it is the only way to find out whether a stranger reads your rules the way you meant them.</p>
+<p><strong>Test your rules the way you test code.</strong> Blind adjudication is an afternoon, and it is the only way to learn whether a stranger reads your rules the way you meant them.</p>
 
-<p>The literature for this is not in the agent-protocol space: it is in domain-driven design, in <em>Team Topologies</em>, in Koestler on self-regulating hierarchic order, and in a 1988 note about a compiler tricked into writing to a file it should not have touched, so read those before you write your eleventh clause.</p>
+<p>The literature is in domain-driven design, Team Topologies, Koestler, and a 1988 note about a compiler tricked into writing a file it should not have touched. Read those before you write your eleventh clause.</p>
 
 <h2>Reading, most useful first</h2>
 
 <ul>
-  <li><strong>Team Topologies</strong> (Skelton and Pais, 2019). Settles the platform-team role better than anything else, and is the only source built for this problem shape rather than adapted to it.</li>
+  <li><strong>Team Topologies</strong> (Skelton and Pais, 2019). Settles the platform-team role, and is the only source built for this problem shape rather than adapted to it.</li>
   <li><strong>Domain-Driven Design</strong> (Evans, 2003). Settles domain ownership and the seams between domains. The condensed <em>DDD Reference</em> is enough if time is short.</li>
-  <li><strong>Koestler on the holon</strong>. Settles the forest shape formally. Two texts get confused: “Some General Properties of Self-Regulating Open Hierarchic Order” is Appendix I of <em>The Ghost in the Machine</em> (1967), while “Beyond Atomism and Holism: The Concept of the Holon” is the 1969 Alpbach paper. Check which you want before citing.</li>
-  <li><strong>Hardy, “The Confused Deputy” (1988)</strong>. Four pages, and the failure mode the anti-laundering rule exists to prevent.</li>
+  <li><strong>Koestler on the holon.</strong> Settles the forest shape. Two texts get confused: "Some General Properties of Self-Regulating Open Hierarchic Order" is Appendix I of <em>The Ghost in the Machine</em> (1967), and "Beyond Atomism and Holism: The Concept of the Holon" is the 1969 Alpbach paper. Check which you want before citing.</li>
+  <li><strong>Hardy, "The Confused Deputy" (1988).</strong> Four pages, and the failure mode the anti-laundering rule exists to prevent.</li>
 </ul>
 
-<p>FIPA’s specifications are worth reading for the Directory Facilitator definition, but the live <code>fipa.org</code> domain no longer serves them; use the Internet Archive copies.</p>
+<p>FIPA's specifications are worth reading for the Directory Facilitator definition. The live <code>fipa.org</code> domain no longer serves them, so use the Internet Archive copies.</p>
 </div>
 </body>
 </html>
